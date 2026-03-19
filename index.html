@@ -5,21 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VBA模擬試験</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <h1>VBA模擬試験</h1>
 
+<div id="modeDisplay"></div>
+<button class="modeBtn" onclick="startExam()">本番モード</button>
+<button class="modeBtn" onclick="startHalf()">ハーフモード</button>
+<button class="modeBtn" onclick="startFree()">フリーモード</button>
+<button class="modeBtn" onclick="startFreeNoTimer()">無制限</button>
+
+<div id="timer"></div>
+
 <div id="score"></div>
 
 <div id="question"></div>
+
+<pre id ="code"></pre>
 
 <div id="choices"></div>
 
 <div id="result"></div>
 
+<a id="searchLink" href="#" target="_blank"></a>
+
 <button onclick="nextQuestion()">次の問題</button>
+
+<button onclick="endExam()">終了する</button>
 
 <script src="main.js"></script>
 
