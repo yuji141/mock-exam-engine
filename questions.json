@@ -1,588 +1,1904 @@
 [
 {
-  "question": "次のVBAコードを実行すると表示される値はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["10","15","20","25"],
-  "answer": 1,
-  "explanation": "1+2+3+4+5=15"
-},
-{
-  "question": "次のコードの実行結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i Mod 2 = 0 Then total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["6","9","10","15"],
-  "answer": 0,
-  "explanation": "2+4=6"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim x As Integer\nx = 10\nCall Test(x)\nMsgBox x\n\nSub Test(ByVal n As Integer)\n    n = n + 5\nEnd Sub",
-  "choices": ["10","15","5","0"],
-  "answer": 0,
-  "explanation": "ByValなので元の値は変わらない"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim x As Integer\nx = 10\nCall Test(x)\nMsgBox x\n\nSub Test(ByRef n As Integer)\n    n = n + 5\nEnd Sub",
-  "choices": ["10","15","5","0"],
-  "answer": 1,
-  "explanation": "ByRefで変更される"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,2,3)",
-  "choices": ["ABC","BCD","CDE","AB"],
-  "answer": 1,
-  "explanation": "2文字目から3文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 10\nMsgBox n \\ 3",
-  "choices": ["3","3.3","4","2"],
-  "answer": 0,
-  "explanation": "整数除算"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 10\nMsgBox n Mod 3",
-  "choices": ["1","2","3","0"],
-  "answer": 0,
-  "explanation": "余り1"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim arr(2) As Integer\narr(0)=1\narr(1)=2\narr(2)=3\nMsgBox arr(1)",
-  "choices": ["1","2","3","0"],
-  "answer": 1,
-  "explanation": "添字1は2"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    total = total * 2\nNext i\n\nMsgBox total",
-  "choices": ["12","20","22","24"],
+  "question": "次のVBAコードを実行した結果として表示される値はどれですか。",
+  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total",
+  "choices": ["6", "8", "10", "4"],
   "answer": 2,
-  "explanation": "計算を順に実行"
+  "explanation": "1+2+3+4=10"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 5\n    If i > 3 Then count = count + 1\nNext i\n\nMsgBox count",
-  "choices": ["1","2","3","4"],
-  "answer": 1,
-  "explanation": "4と5で2回"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABC\"\nMsgBox Len(s)",
-  "choices": ["1","2","3","4"],
-  "answer": 2,
-  "explanation": "3文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABC\"\nMsgBox Left(s,2)",
-  "choices": ["A","AB","BC","ABC"],
-  "answer": 1,
-  "explanation": "左から2文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABC\"\nMsgBox Right(s,1)",
-  "choices": ["A","B","C","AB"],
-  "answer": 2,
-  "explanation": "右1文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(Trim(s))",
-  "choices": ["3","4","5","6"],
-  "answer": 0,
-  "explanation": "空白削除後ABC"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim v As Variant\nv = \"10\"\nMsgBox v + 5",
-  "choices": ["15","105","10","エラー"],
-  "answer": 0,
-  "explanation": "数値変換される"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\ni = 1\nDo While i <= 3\n    i = i + 1\nLoop\nMsgBox i",
-  "choices": ["2","3","4","5"],
-  "answer": 2,
-  "explanation": "4で終了"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\ni = 1\nDo Until i > 3\n    i = i + 1\nLoop\nMsgBox i",
-  "choices": ["3","4","5","6"],
-  "answer": 1,
-  "explanation": "4で終了"
-},
-{
-  "question": "次のコードで Option Explicit の目的はどれですか。",
-  "choices": ["速度向上","変数宣言を強制","エラー無視","自動実行"],
-  "answer": 1,
-  "explanation": "変数宣言必須"
-},
-{
-  "question": "次のコードで If の役割はどれですか。",
-  "choices": ["繰り返し","分岐","宣言","終了"],
-  "answer": 1,
-  "explanation": "条件分岐"
-},
-{
-  "question": "次のコードで For の役割はどれですか。",
-  "choices": ["分岐","繰り返し","終了","宣言"],
-  "answer": 1,
-  "explanation": "ループ"
-},
-{
-  "question": "次のコードで Sub の特徴はどれですか。",
-  "choices": ["値を返す","値を返さない","必ずPublic","必ずPrivate"],
-  "answer": 1,
-  "explanation": "戻り値なし"
-},
-{
-  "question": "次のコードで Function の特徴はどれですか。",
-  "choices": ["値を返さない","値を返す","削除","終了"],
-  "answer": 1,
-  "explanation": "戻り値あり"
-},
-{
-  "question": "Range(\"A1\").Value の意味はどれですか。",
-  "choices": ["セル削除","値取得/設定","コピー","移動"],
-  "answer": 1,
-  "explanation": "値操作"
-},
-{
-  "question": "Cells(2,3) が指すセルはどれですか。",
-  "choices": ["B3","C2","C3","A1"],
-  "answer": 2,
-  "explanation": "2行3列"
-},
-{
-  "question": "With ステートメントの目的はどれですか。",
-  "choices": ["速度低下","記述簡略化","削除","繰り返し"],
-  "answer": 1,
-  "explanation": "オブジェクト省略"
-},
-{
-  "question": "Set の役割はどれですか。",
-  "choices": ["値代入","オブジェクト代入","削除","初期化"],
-  "answer": 1,
-  "explanation": "オブジェクト参照"
-},
-{
-  "question": "Nothing の意味はどれですか。",
-  "choices": ["0","空文字","未設定","False"],
-  "answer": 2,
-  "explanation": "オブジェクト未設定"
-},
-{
-  "question": "Debug.Print の役割はどれですか。",
-  "choices": ["画面表示","イミディエイト出力","削除","保存"],
-  "answer": 1,
-  "explanation": "デバッグ用"
-},
-{
-  "question": "Exit For の役割はどれですか。",
-  "choices": ["スキップ","ループ終了","次へ","無視"],
-  "answer": 1,
-  "explanation": "途中終了"
-},
-{
-  "question": "次のVBAコードの実行結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i * 2\nNext i\n\nMsgBox total",
-  "choices": ["10","12","20","16"],
-  "answer": 2,
-  "explanation": "2+4+6+8=20"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 5 To 1 Step -2\n    total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["6","9","12","15"],
-  "answer": 1,
-  "explanation": "5+3+1=9"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 6\n    If i Mod 3 = 0 Then count = count + 1\nNext i\n\nMsgBox count",
-  "choices": ["1","2","3","4"],
-  "answer": 1,
-  "explanation": "3と6で2回"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\nNext i\n\nMsgBox total * total",
-  "choices": ["6","9","12","36"],
-  "answer": 3,
-  "explanation": "6×6=36"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,3,2)",
-  "choices": ["AB","BC","CD","DE"],
-  "answer": 2,
-  "explanation": "3文字目から2文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Right(s,3)",
-  "choices": ["ABC","BCD","CDE","DE"],
-  "answer": 2,
-  "explanation": "右3文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(s)",
-  "choices": ["3","4","5","6"],
-  "answer": 1,
-  "explanation": "空白含め5文字"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = CInt(\"7\")\nMsgBox n * 3",
-  "choices": ["7","10","21","0"],
-  "answer": 2,
-  "explanation": "7×3=21"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 9\nMsgBox n \\ 4",
-  "choices": ["2","2.25","3","4"],
-  "answer": 0,
-  "explanation": "整数除算2"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 9\nMsgBox n Mod 4",
-  "choices": ["1","2","3","4"],
-  "answer": 0,
-  "explanation": "余り1"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim arr(3) As Integer\narr(0)=2\narr(1)=4\narr(2)=6\narr(3)=8\nMsgBox arr(2)",
-  "choices": ["2","4","6","8"],
-  "answer": 2,
-  "explanation": "添字2=6"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + 1\nNext i\n\nMsgBox total",
-  "choices": ["1","2","3","4"],
-  "answer": 3,
-  "explanation": "4回で4"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 2 To 6 Step 2\n    total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["6","8","12","14"],
+  "question": "次のコードを実行した場合の結果はどれですか。",
+  "code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 2 To 6 Step 2\n    sum = sum + i\nNext i\n\nMsgBox sum",
+  "choices": ["6", "8", "12", "14"],
   "answer": 2,
   "explanation": "2+4+6=12"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i >= 4 Then total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["5","7","9","12"],
+  "question": "次のコードの実行結果として正しいものはどれですか。",
+  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i Mod 2 = 0 Then total = total + i\nNext i\n\nMsgBox total",
+  "choices": ["6", "9", "10", "15"],
+  "answer": 0,
+  "explanation": "偶数は2と4→6"
+},
+{
+  "question": "次のコードを実行した結果はどれですか。",
+  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 5 To 1 Step -2\n    total = total + i\nNext i\n\nMsgBox total",
+  "choices": ["6", "9", "12", "15"],
+  "answer": 1,
+  "explanation": "5+3+1=9"
+},
+{
+  "question": "次のコードの実行結果として表示される値はどれですか。",
+  "code": "Dim x As Integer\nx = 5\nCall Test(x)\nMsgBox x\n\nSub Test(ByVal n As Integer)\n    n = n + 10\nEnd Sub",
+  "choices": ["5", "10", "15", "0"],
+  "answer": 0,
+  "explanation": "ByValは値渡しなので変更されない"
+},
+{
+  "question": "次のコードの実行結果として表示される値はどれですか。",
+  "code": "Dim x As Integer\nx = 5\nCall Test(x)\nMsgBox x\n\nSub Test(ByRef n As Integer)\n    n = n + 10\nEnd Sub",
+  "choices": ["5", "10", "15", "0"],
   "answer": 2,
-  "explanation": "4+5=9"
+  "explanation": "ByRefは参照渡し→変更される"
+},
+{
+  "question": "次のコードの結果として表示される文字列はどれですか。",
+  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,2,3)",
+  "choices": ["ABC", "BCD", "CDE", "AB"],
+  "answer": 1,
+  "explanation": "2文字目から3文字→BCD"
 },
 {
   "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + 2\nNext i\n\nMsgBox total",
-  "choices": ["2","4","6","8"],
+  "code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(Trim(s))",
+  "choices": ["3", "4", "5", "6"],
+  "answer": 0,
+  "explanation": "空白削除後→ABC→3文字"
+},
+{
+  "question": "次のコードの結果として表示される値はどれですか。",
+  "code": "Dim n As Integer\nn = 10\nMsgBox n \\ 3",
+  "choices": ["3", "3.3", "4", "2"],
+  "answer": 0,
+  "explanation": "整数除算→3"
+},
+{
+  "question": "次のコードの結果として表示される値はどれですか。",
+  "code": "Dim n As Integer\nn = 10\nMsgBox n Mod 3",
+  "choices": ["1", "2", "3", "0"],
+  "answer": 0,
+  "explanation": "余り1"
+},
+{
+  "question": "次のコードを実行した場合の結果はどれですか。",
+  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    total = total * 2\nNext i\n\nMsgBox total",
+  "choices": ["12", "20", "22", "24"],
   "answer": 2,
-  "explanation": "2+2+2=6"
+  "explanation": "計算過程→22"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"A\" & \"B\" & \"C\"\nMsgBox s",
-  "choices": ["ABC","A B C","CBA","AB"],
-  "answer": 0,
-  "explanation": "文字連結"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim v As Variant\nv = \"5\"\nMsgBox v * 2",
-  "choices": ["10","52","5","エラー"],
-  "answer": 0,
-  "explanation": "数値として扱われる"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\ni = 1\nDo While i < 3\n    i = i + 1\nLoop\nMsgBox i",
-  "choices": ["2","3","4","5"],
-  "answer": 1,
-  "explanation": "3で終了"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\ni = 1\nDo Until i = 3\n    i = i + 1\nLoop\nMsgBox i",
-  "choices": ["2","3","4","5"],
-  "answer": 1,
-  "explanation": "3で終了"
-},
-{
-  "question": "次のコードで Exit Do の役割はどれですか。",
-  "choices": ["スキップ","ループ終了","次へ","無視"],
-  "answer": 1,
-  "explanation": "ループを途中終了"
-},
-{
-  "question": "次のコードで Select Case の役割はどれですか。",
-  "choices": ["繰り返し","分岐","宣言","削除"],
-  "answer": 1,
-  "explanation": "複数条件分岐"
-},
-{
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 1\nSelect Case n\n    Case 1\n        MsgBox \"A\"\n    Case 2\n        MsgBox \"B\"\nEnd Select",
-  "choices": ["A","B","C","エラー"],
-  "answer": 0,
-  "explanation": "Case1"
-},
-{
-  "question": "次のコードで Variant 型の特徴はどれですか。",
-  "choices": ["数値専用","文字専用","何でも入る","配列専用"],
+  "question": "次のコードの実行結果として正しいものはどれですか。",
+  "code": "Dim arr(2) As Integer\narr(0)=1\narr(1)=2\narr(2)=3\nMsgBox arr(2)",
+  "choices": ["1", "2", "3", "0"],
   "answer": 2,
-  "explanation": "柔軟な型"
+  "explanation": "添字2→3"
 },
 {
-  "question": "次のコードで IsNumeric(\"123\") の結果はどれですか。",
-  "choices": ["True","False","123","エラー"],
+  "question": "次のコードでCells(2,3)が示すセルはどれですか。",
+  "choices": ["B3", "C2", "C3", "A2"],
+  "answer": 1,
+  "explanation": "2行3列→C2"
+},
+{
+  "question": "次のコードでRange(\"A1\").Valueの意味として正しいものはどれですか。",
+  "choices": [
+    "セル削除",
+    "セルの値の取得・設定",
+    "セルコピー",
+    "セル移動"
+  ],
+  "answer": 1,
+  "explanation": "値の読み書き"
+},
+{
+  "question": "次のコードの実行結果として表示される値はどれですか。",
+  "code": "Range(\"A1\").Value = 5\nRange(\"A1\").Value = Range(\"A1\").Value + 3\nMsgBox Range(\"A1\").Value",
+  "choices": ["5", "8", "3", "0"],
+  "answer": 1,
+  "explanation": "5+3=8"
+},
+{
+  "question": "次のコードでSetを使用している理由として正しいものはどれですか。",
+  "code": "Dim r As Range\nSet r = Range(\"A1\")",
+  "choices": [
+    "値を代入するため",
+    "オブジェクトを代入するため",
+    "エラーを防ぐため",
+    "文字列を扱うため"
+  ],
+  "answer": 1,
+  "explanation": "Rangeはオブジェクト"
+},
+{
+  "question": "次のコードの実行結果はどれですか。",
+  "code": "Dim i As Integer\ni = 1\nDo While i < 4\n    i = i + 1\nLoop\nMsgBox i",
+  "choices": ["2", "3", "4", "5"],
+  "answer": 2,
+  "explanation": "4で終了"
+},
+{
+  "question": "次のコードの実行結果はどれですか。",
+  "code": "Dim i As Integer\ni = 1\nDo Until i > 3\n    i = i + 1\nLoop\nMsgBox i",
+  "choices": ["3", "4", "5", "6"],
+  "answer": 1,
+  "explanation": "4で終了"
+},
+{
+  "question": "次のコードの結果として表示される値はどれですか。",
+  "code": "Dim s As String\ns = \"ABC\"\nMsgBox Len(s)",
+  "choices": ["1", "2", "3", "4"],
+  "answer": 2,
+  "explanation": "3文字"
+},
+{
+  "question": "次のコードの結果として表示される文字列はどれですか。",
+  "code": "Dim s As String\ns = \"ABC\"\nMsgBox Left(s,2)",
+  "choices": ["A", "AB", "BC", "ABC"],
+  "answer": 1,
+  "explanation": "左2文字"
+},
+{
+  "question": "次のコードの結果として表示される文字列はどれですか。",
+  "code": "Dim s As String\ns = \"ABC\"\nMsgBox Right(s,1)",
+  "choices": ["A", "B", "C", "AB"],
+  "answer": 2,
+  "explanation": "右1文字"
+},
+{
+  "question": "次のコードの実行結果はどれですか。",
+  "code": "Dim n As Integer\nn = 5\nIf n > 3 Then MsgBox \"OK\"",
+  "choices": ["OK", "NG", "5", "エラー"],
   "answer": 0,
-  "explanation": "数値判定"
+  "explanation": "条件成立"
 },
 {
-  "question": "次のコードで IsNumeric(\"ABC\") の結果はどれですか。",
-  "choices": ["True","False","ABC","エラー"],
+  "question": "次のコードの実行結果はどれですか。",
+  "code": "Dim n As Integer\nn = 5\nIf n > 10 Then MsgBox \"OK\"",
+  "choices": ["OK", "何も表示されない", "5", "エラー"],
   "answer": 1,
-  "explanation": "文字列はFalse"
+  "explanation": "条件不成立"
 },
 {
-  "question": "次のコードで And の意味はどれですか。",
-  "choices": ["または","かつ","否定","比較"],
+  "question": "次のコードでPublic Subの特徴として正しいものはどれですか。",
+  "code": "Public Sub Test()",
+  "choices": [
+    "同一モジュールのみ",
+    "他モジュールから呼び出せる",
+    "戻り値がある",
+    "自動実行"
+  ],
   "answer": 1,
-  "explanation": "両方True"
+  "explanation": "Publicは外部から呼べる"
 },
 {
-  "question": "次のコードで Or の意味はどれですか。",
-  "choices": ["または","かつ","否定","比較"],
+  "question": "次のコードでPrivate Subの特徴として正しいものはどれですか。",
+  "code": "Private Sub Test()",
+  "choices": [
+    "どこからでも呼べる",
+    "同一モジュール内のみ",
+    "戻り値あり",
+    "自動実行"
+  ],
+  "answer": 1,
+  "explanation": "スコープ制限"
+},
+{
+  "question": "次のコードでFunctionの特徴として正しいものはどれですか。",
+  "code": "Function Test() As Integer",
+  "choices": [
+    "値を返さない",
+    "値を返す",
+    "必ずPrivate",
+    "必ずPublic"
+  ],
+  "answer": 1,
+  "explanation": "戻り値あり"
+},
+{
+  "question": "次のコードの結果として表示される値はどれですか。",
+  "code": "Dim v As Variant\nv = \"10\"\nMsgBox v + 5",
+  "choices": ["15", "105", "10", "エラー"],
   "answer": 0,
-  "explanation": "どちらかTrue"
+  "explanation": "数値変換される"
 },
 {
-  "question": "次のコードで Not の意味はどれですか。",
-  "choices": ["否定","加算","比較","繰り返し"],
-  "answer": 0,
-  "explanation": "論理否定"
-},
-{
-  "question": "次のコードで MsgBox の役割はどれですか。",
-  "choices": ["入力","表示","削除","保存"],
+  "question": "次のコードでApplication.ScreenUpdating=Falseの目的として正しいものはどれですか。",
+  "choices": [
+    "処理を遅くする",
+    "画面更新を停止して高速化",
+    "エラー防止",
+    "保存"
+  ],
   "answer": 1,
-  "explanation": "メッセージ表示"
+  "explanation": "描画停止で高速化"
 },
 {
-  "question": "次のコードで InputBox の役割はどれですか。",
-  "choices": ["表示","入力","削除","保存"],
-  "answer": 1,
-  "explanation": "ユーザー入力取得"
-},
-{
-  "question": "次のVBAコードの実行結果はどれですか。",
+  "question": "次のコードの実行結果として表示される値はどれですか。",
   "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i = 3 Then Exit For\n    total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["3","6","10","15"],
+  "choices": ["3", "6", "10", "15"],
   "answer": 0,
   "explanation": "1+2=3で終了"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i = 3 Then GoTo Skip\n    total = total + i\nSkip:\nNext i\n\nMsgBox total",
-  "choices": ["12","10","9","15"],
-  "answer": 0,
-  "explanation": "3をスキップ→1+2+4+5=12"
+"question": "次のコードを実行したとき、セルA1に表示される値はどれですか。",
+"code": "Range(\"A1\").Value = 5\nRange(\"A1\").Value = Range(\"A1\").Value + 3",
+"choices": ["5","8","3","エラー"],
+"answer": 1,
+"explanation": "5+3=8"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total + total",
-  "choices": ["10","20","15","25"],
-  "answer": 1,
-  "explanation": "10+10=20"
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\nNext i\n\nMsgBox total",
+"choices": ["3","6","9","0"],
+"answer": 1,
+"explanation": "1+2+3=6"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    If total > 3 Then Exit For\nNext i\n\nMsgBox total",
-  "choices": ["3","6","4","5"],
-  "answer": 2,
-  "explanation": "1→3→6になる前に4で止まる"
+"question": "次のコードで、最終的に表示される値はどれですか。",
+"code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 2 To 6 Step 2\n    sum = sum + i\nNext i\n\nMsgBox sum",
+"choices": ["6","8","12","14"],
+"answer": 2,
+"explanation": "2+4+6=12"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,2)",
-  "choices": ["BCDE","ABCDE","BCD","CDE"],
-  "answer": 0,
-  "explanation": "2文字目以降すべて"
+"question": "次のコードで、変数xの値はどうなりますか。",
+"code": "Dim x As Integer\nx = 10\nCall Test(x)\nMsgBox x\n\nSub Test(ByVal n As Integer)\n    n = n + 5\nEnd Sub",
+"choices": ["10","15","5","0"],
+"answer": 0,
+"explanation": "ByValなので元の値は変わらない"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Left(s, Len(s) - 1)",
-  "choices": ["ABCD","ABCDE","BCDE","ABC"],
-  "answer": 0,
-  "explanation": "5-1=4文字"
+"question": "次のコードで、変数xの値はどうなりますか。",
+"code": "Dim x As Integer\nx = 10\nCall Test(x)\nMsgBox x\n\nSub Test(ByRef n As Integer)\n    n = n + 5\nEnd Sub",
+"choices": ["10","15","5","0"],
+"answer": 1,
+"explanation": "ByRefなので変更される"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Right(s, Len(s) - 3)",
-  "choices": ["DE","CDE","BCDE","ABCDE"],
-  "answer": 0,
-  "explanation": "5-3=2→DE"
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,2,2)",
+"choices": ["AB","BC","CD","DE"],
+"answer": 1,
+"explanation": "2文字目から2文字"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 5\nMsgBox n ^ 2",
-  "choices": ["10","25","15","5"],
-  "answer": 1,
-  "explanation": "べき乗"
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Right(s,3)",
+"choices": ["ABC","BCD","CDE","DE"],
+"answer": 2,
+"explanation": "右から3文字"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim n As Integer\nn = 2\nMsgBox 3 ^ n",
-  "choices": ["6","8","9","12"],
-  "answer": 2,
-  "explanation": "3^2=9"
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim n As Integer\nn = 10\nMsgBox n \\ 4",
+"choices": ["2","2.5","3","4"],
+"answer": 0,
+"explanation": "整数除算で2"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 1 To 3\n    sum = sum + i\nNext i\n\nMsgBox sum / 2",
-  "choices": ["3","2","1","6"],
-  "answer": 0,
-  "explanation": "6/2=3"
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim n As Integer\nn = 10\nMsgBox n Mod 4",
+"choices": ["1","2","3","4"],
+"answer": 1,
+"explanation": "余り2"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 1 To 3\n    sum = sum + i\nNext i\n\nMsgBox sum \\ 2",
-  "choices": ["3","2","1","6"],
-  "answer": 0,
-  "explanation": "6\\2=3"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 5\n    If i > 3 Then count = count + 1\nNext i\n\nMsgBox count",
+"choices": ["1","2","3","4"],
+"answer": 1,
+"explanation": "4と5で2回"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim arr(1 To 3) As Integer\narr(1)=10\narr(2)=20\narr(3)=30\nMsgBox arr(1)+arr(3)",
-  "choices": ["10","30","40","50"],
-  "answer": 2,
-  "explanation": "10+30=40"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total * 2",
+"choices": ["10","12","20","24"],
+"answer": 2,
+"explanation": "10×2=20"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 3 To 1 Step -1\n    total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["6","5","4","3"],
-  "answer": 0,
-  "explanation": "3+2+1=6"
+"question": "次のコードでCells(2,3)が指すセルはどれですか。",
+"choices": ["B3","C2","C3","A2"],
+"answer": 2,
+"explanation": "2行3列→C3"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i <> 3 Then total = total + i\nNext i\n\nMsgBox total",
-  "choices": ["12","10","9","15"],
-  "answer": 0,
-  "explanation": "3以外→1+2+4+5=12"
+"question": "次のコードの実行結果はどれですか。",
+"code": "Range(\"B2\").Value = 10\nMsgBox Cells(2,2).Value",
+"choices": ["0","10","2","エラー"],
+"answer": 1,
+"explanation": "Cells(2,2)=B2"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"abc\"\nMsgBox UCase(s)",
-  "choices": ["abc","ABC","Abc","エラー"],
-  "answer": 1,
-  "explanation": "大文字"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 1 To 3\n    sum = sum + i\n    sum = sum * 2\nNext i\n\nMsgBox sum",
+"choices": ["12","20","22","24"],
+"answer": 2,
+"explanation": "22になる"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim s As String\ns = \"ABC\"\nMsgBox LCase(s)",
-  "choices": ["abc","ABC","Abc","エラー"],
-  "answer": 0,
-  "explanation": "小文字"
+"question": "次のコードでExit Forの役割として正しいものはどれですか。",
+"code": "For i = 1 To 10\n    If i = 5 Then Exit For\nNext i",
+"choices": ["次へ進む","ループ終了","スキップ","エラー"],
+"answer": 1,
+"explanation": "途中終了"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim v As Variant\nv = \"10\"\nMsgBox v & 5",
-  "choices": ["15","105","10","エラー"],
-  "answer": 1,
-  "explanation": "文字連結"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo While i <= 3\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["2","3","4","5"],
+"answer": 2,
+"explanation": "4で終了"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\ni = 1\nDo\n    i = i + 1\nLoop While i < 3\nMsgBox i",
-  "choices": ["2","3","4","5"],
-  "answer": 1,
-  "explanation": "後判定ループ"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo Until i > 3\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["3","4","5","6"],
+"answer": 1,
+"explanation": "4"
 },
 {
-  "question": "次のコードの結果はどれですか。",
-  "code": "Dim i As Integer\ni = 1\nDo\n    i = i + 1\nLoop Until i = 3\nMsgBox i",
-  "choices": ["2","3","4","5"],
-  "answer": 1,
-  "explanation": "3で終了"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim v As Variant\nv = \"10\"\nMsgBox v + 5",
+"choices": ["15","105","10","エラー"],
+"answer": 0,
+"explanation": "数値として扱われる"
 },
 {
-  "question": "次のコードで Range(\"A1\").Address の結果はどれですか。",
-  "choices": ["A1","$A$1","1,1","エラー"],
-  "answer": 1,
-  "explanation": "絶対参照"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"abc\"\nMsgBox UCase(s)",
+"choices": ["abc","ABC","Abc","エラー"],
+"answer": 1,
+"explanation": "大文字化"
 },
 {
-  "question": "次のコードで Range(\"A1\").Row の結果はどれですか。",
-  "choices": ["1","A","0","エラー"],
-  "answer": 0,
-  "explanation": "行番号"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"ABC\"\nMsgBox LCase(s)",
+"choices": ["abc","ABC","Abc","エラー"],
+"answer": 0,
+"explanation": "小文字化"
 },
 {
-  "question": "次のコードで Range(\"A1\").Column の結果はどれですか。",
-  "choices": ["1","A","0","エラー"],
-  "answer": 0,
-  "explanation": "列番号"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(Trim(s))",
+"choices": ["3","4","5","6"],
+"answer": 0,
+"explanation": "ABCで3"
 },
 {
-  "question": "次のコードで Cells(3,2).Value が指すセルはどれですか。",
-  "choices": ["B3","C2","B2","A1"],
-  "answer": 0,
-  "explanation": "3行2列"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim arr(2) As Integer\narr(0)=1\narr(1)=2\narr(2)=3\nMsgBox arr(1)",
+"choices": ["1","2","3","0"],
+"answer": 1,
+"explanation": "添字1"
 },
 {
-  "question": "次のコードで With の動作として正しいものはどれですか。",
-  "code": "With Range(\"A1\")\n    .Value = 10\n    .Offset(1,0).Value = 20\nEnd With",
-  "choices": ["A1=10,B1=20","A1=10,A2=20","A2=10,A3=20","エラー"],
-  "answer": 1,
-  "explanation": "下に1行"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"A\" & \"B\" & \"C\"\nMsgBox s",
+"choices": ["ABC","A B C","CBA","AB"],
+"answer": 0,
+"explanation": "連結"
 },
 {
-  "question": "次のコードで Call の役割はどれですか。",
-  "choices": ["削除","呼び出し","保存","終了"],
-  "answer": 1,
-  "explanation": "プロシージャ実行"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = CInt(\"5\")\nMsgBox n * 2",
+"choices": ["5","10","15","20"],
+"answer": 1,
+"explanation": "5×2=10"
 },
 {
-  "question": "次のコードで Stop の役割はどれですか。",
-  "choices": ["終了","一時停止","削除","保存"],
-  "answer": 1,
-  "explanation": "デバッグ停止"
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i Mod 2 = 0 Then total = total + i\nNext i\n\nMsgBox total",
+"choices": ["6","9","10","12"],
+"answer": 0,
+"explanation": "2+4=6"
 },
 {
-  "question": "次のコードで Resume の役割はどれですか。",
-  "choices": ["終了","再開","削除","保存"],
-  "answer": 1,
-  "explanation": "エラー後再開"
+"question": "次のコードでIf文の役割として正しいものはどれですか。",
+"code": "If n > 5 Then MsgBox \"OK\"",
+"choices": ["繰り返し","分岐","宣言","削除"],
+"answer": 1,
+"explanation": "条件分岐"
 },
 {
-  "question": "次のコードで End の動作として正しいものはどれですか。",
-  "code": "Sub Test()\n    MsgBox \"A\"\n    End\n    MsgBox \"B\"\nEnd Sub",
-  "choices": ["AとB","Aのみ","Bのみ","何も表示されない"],
-  "answer": 1,
-  "explanation": "即終了"
+"question": "次のコードでWithステートメントの目的はどれですか。",
+"code": "With Range(\"A1\")\n    .Value = 10\nEnd With",
+"choices": ["高速化","簡略化","削除","繰り返し"],
+"answer": 1,
+"explanation": "記述を省略"
 },
 {
-  "question": "次のコードで Debug.Print の出力先はどれですか。",
-  "choices": ["画面","イミディエイトウィンドウ","ファイル","セル"],
-  "answer": 1,
-  "explanation": "デバッグ用"
+"question": "次のコードでRange(\"A1\").Valueの意味はどれですか。",
+"choices": ["削除","値の取得/設定","コピー","移動"],
+"answer": 1,
+"explanation": "セル値"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 5\nMsgBox n * n",
+"choices": ["10","15","20","25"],
+"answer": 3,
+"explanation": "25"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\nNext i\n\nMsgBox total + 3",
+"choices": ["6","9","12","15"],
+"answer": 1,
+"explanation": "6+3=9"
+},
+{
+"question": "次のコードを実行したとき、表示される値はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total",
+"choices": ["6","8","10","4"],
+"answer": 2,
+"explanation": "1+2+3+4=10"
+},
+{
+"question": "次のコードを実行したとき、表示される値はどれですか。",
+"code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 2 To 8 Step 2\n    sum = sum + i\nNext i\n\nMsgBox sum",
+"choices": ["12","16","20","24"],
+"answer": 2,
+"explanation": "2+4+6+8=20"
+},
+{
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 5\n    If i Mod 2 = 1 Then count = count + 1\nNext i\n\nMsgBox count",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "1,3,5で3回"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 5 To 1 Step -2\n    total = total + i\nNext i\n\nMsgBox total",
+"choices": ["6","9","12","15"],
+"answer": 1,
+"explanation": "5+3+1=9"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim x As Integer\nx = 5\nCall Test(x)\nMsgBox x\n\nSub Test(ByVal n As Integer)\n    n = n * 2\nEnd Sub",
+"choices": ["5","10","15","0"],
+"answer": 0,
+"explanation": "ByValなので変化しない"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim x As Integer\nx = 5\nCall Test(x)\nMsgBox x\n\nSub Test(ByRef n As Integer)\n    n = n * 2\nEnd Sub",
+"choices": ["5","10","15","0"],
+"answer": 1,
+"explanation": "ByRefで変更される"
+},
+{
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Left(s,3)",
+"choices": ["ABC","BCD","CDE","AB"],
+"answer": 0,
+"explanation": "左3文字"
+},
+{
+"question": "次のコードの実行結果はどれですか。",
+"code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Right(s,2)",
+"choices": ["AB","BC","CD","DE"],
+"answer": 3,
+"explanation": "右2文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,3,2)",
+"choices": ["AB","BC","CD","DE"],
+"answer": 2,
+"explanation": "3文字目から2文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(s)",
+"choices": ["3","4","5","6"],
+"answer": 2,
+"explanation": "空白含め5文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(Trim(s))",
+"choices": ["3","4","5","6"],
+"answer": 0,
+"explanation": "ABCで3"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 9\nMsgBox n \\ 2",
+"choices": ["3","4","4.5","2"],
+"answer": 1,
+"explanation": "整数除算で4"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 9\nMsgBox n Mod 2",
+"choices": ["0","1","2","3"],
+"answer": 1,
+"explanation": "余り1"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim arr(2) As Integer\narr(0)=10\narr(1)=20\narr(2)=30\nMsgBox arr(2)",
+"choices": ["10","20","30","0"],
+"answer": 2,
+"explanation": "添字2"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim arr(1) As Integer\narr(0)=5\narr(1)=15\nMsgBox arr(0)+arr(1)",
+"choices": ["5","10","15","20"],
+"answer": 3,
+"explanation": "5+15=20"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"A\" & \"B\"\nMsgBox s",
+"choices": ["A","B","AB","BA"],
+"answer": 2,
+"explanation": "連結"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = CInt(\"8\")\nMsgBox n + 2",
+"choices": ["8","10","2","エラー"],
+"answer": 1,
+"explanation": "8+2=10"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim v As Variant\nv = \"5\"\nMsgBox v * 2",
+"choices": ["10","52","5","エラー"],
+"answer": 0,
+"explanation": "数値として扱われる"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Range(\"A1\").Value = 3\nRange(\"A1\").Value = Range(\"A1\").Value * 2\nMsgBox Range(\"A1\").Value",
+"choices": ["3","6","9","エラー"],
+"answer": 1,
+"explanation": "3×2=6"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Range(\"B2\").Value = 7\nMsgBox Cells(2,2).Value",
+"choices": ["0","7","2","エラー"],
+"answer": 1,
+"explanation": "B2"
+},
+{
+"question": "次のコードでCells(3,1)が指すセルはどれですか。",
+"choices": ["A3","B3","C1","A1"],
+"answer": 0,
+"explanation": "3行1列"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    total = total + 1\nNext i\n\nMsgBox total",
+"choices": ["6","9","12","15"],
+"answer": 1,
+"explanation": "(1+1)+(2+1)+(3+1)=9"
+},
+{
+"question": "次のコードでExit Forの役割として正しいものはどれですか。",
+"code": "For i = 1 To 10\n    If i = 3 Then Exit For\nNext i",
+"choices": ["繰り返す","終了する","スキップ","エラー"],
+"answer": 1,
+"explanation": "途中終了"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo While i < 3\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "3で終了"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo Until i = 3\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "3で終了"
+},
+{
+"question": "次のコードでIf文の役割として正しいものはどれですか。",
+"code": "If x > 5 Then MsgBox \"OK\"",
+"choices": ["繰り返し","分岐","宣言","削除"],
+"answer": 1,
+"explanation": "条件分岐"
+},
+{
+"question": "次のコードでRange(\"A1\").Valueの役割はどれですか。",
+"choices": ["削除","値の取得/設定","コピー","移動"],
+"answer": 1,
+"explanation": "セルの値"
+},
+{
+"question": "次のコードでWithの目的はどれですか。",
+"code": "With Range(\"A1\")\n    .Value = 10\nEnd With",
+"choices": ["削除","簡略化","繰り返し","停止"],
+"answer": 1,
+"explanation": "記述を省略"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 4\nMsgBox n * n",
+"choices": ["8","12","16","20"],
+"answer": 2,
+"explanation": "4×4=16"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\nNext i\n\nMsgBox total + 2",
+"choices": ["6","7","8","9"],
+"answer": 2,
+"explanation": "6+2=8"
+},
+{
+"question": "次のコードを実行したとき、表示される値はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    total = total * 2\nNext i\n\nMsgBox total",
+"choices": ["12","20","22","24"],
+"answer": 2,
+"explanation": "(0+1)*2=2 → (2+2)*2=8 → (8+3)*2=22"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 6\n    If i Mod 2 = 0 Then count = count + 1\nNext i\n\nMsgBox count",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "2,4,6で3回"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i = 3 Then Exit For\n    total = total + i\nNext i\n\nMsgBox total",
+"choices": ["3","6","10","15"],
+"answer": 0,
+"explanation": "1+2=3で終了"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i = 3 Then GoTo Skip\n    total = total + i\nSkip:\nNext i\n\nMsgBox total",
+"choices": ["12","10","9","15"],
+"answer": 0,
+"explanation": "3をスキップ→1+2+4+5=12"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"HELLO\"\nMsgBox Mid(s,2,3)",
+"choices": ["HEL","ELL","LLO","EL"],
+"answer": 1,
+"explanation": "2文字目から3文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"HELLO\"\nMsgBox Right(s,1)",
+"choices": ["H","E","L","O"],
+"answer": 3,
+"explanation": "最後の1文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"HELLO\"\nMsgBox Left(s,4)",
+"choices": ["HELL","ELLO","LLO","HEL"],
+"answer": 0,
+"explanation": "左4文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 7\nMsgBox n \\ 3",
+"choices": ["2","2.3","3","4"],
+"answer": 0,
+"explanation": "整数除算で2"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 7\nMsgBox n Mod 3",
+"choices": ["1","2","3","4"],
+"answer": 0,
+"explanation": "余り1"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim v As Variant\nv = \"10\"\nMsgBox v & 5",
+"choices": ["15","105","10","エラー"],
+"answer": 1,
+"explanation": "文字列連結→\"105\""
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim v As Variant\nv = \"10\"\nMsgBox v + 5",
+"choices": ["15","105","10","エラー"],
+"answer": 0,
+"explanation": "数値として計算"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \" abc \"\nMsgBox Len(s)",
+"choices": ["3","4","5","6"],
+"answer": 2,
+"explanation": "空白含め5"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \" abc \"\nMsgBox Len(Trim(s))",
+"choices": ["3","4","5","6"],
+"answer": 0,
+"explanation": "abcで3"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim arr(3) As Integer\narr(0)=1\narr(1)=2\narr(2)=3\narr(3)=4\nMsgBox arr(3)",
+"choices": ["1","2","3","4"],
+"answer": 3,
+"explanation": "添字3=4"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim arr(2) As Integer\narr(0)=2\narr(1)=4\narr(2)=6\nMsgBox arr(0)+arr(2)",
+"choices": ["6","8","10","12"],
+"answer": 1,
+"explanation": "2+6=8"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Range(\"A1\").Value = 2\nRange(\"A1\").Value = Range(\"A1\").Value ^ 3\nMsgBox Range(\"A1\").Value",
+"choices": ["6","8","9","12"],
+"answer": 1,
+"explanation": "2^3=8"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Range(\"C3\").Value = 10\nMsgBox Cells(3,3).Value",
+"choices": ["0","10","3","エラー"],
+"answer": 1,
+"explanation": "C3"
+},
+{
+"question": "次のコードでCells(4,2)はどのセルですか。",
+"choices": ["B4","D2","C4","A2"],
+"answer": 0,
+"explanation": "4行2列→B4"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + 2\nNext i\n\nMsgBox total",
+"choices": ["2","4","6","8"],
+"answer": 2,
+"explanation": "2+2+2=6"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 10\n    If i Mod 3 = 0 Then count = count + 1\nNext i\n\nMsgBox count",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "3,6,9で3回"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo While i <= 2\n    i = i + 2\nLoop\nMsgBox i",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "1→3で終了"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo Until i >= 3\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "3で終了"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"A\" & 1\nMsgBox s",
+"choices": ["A","1","A1","エラー"],
+"answer": 2,
+"explanation": "文字列連結"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 5\nIf n > 3 And n < 10 Then MsgBox \"OK\"",
+"choices": ["OK","NG","5","エラー"],
+"answer": 0,
+"explanation": "条件成立"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 5\nIf n < 3 Or n > 4 Then MsgBox \"OK\"",
+"choices": ["OK","NG","5","エラー"],
+"answer": 0,
+"explanation": "n>4で成立"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim n As Integer\nn = 5\nIf Not (n = 5) Then MsgBox \"OK\"",
+"choices": ["OK","表示されない","5","エラー"],
+"answer": 1,
+"explanation": "Not(True)=False"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"abc\"\nMsgBox UCase(s) & \"!\"",
+"choices": ["abc!","ABC!","Abc!","エラー"],
+"answer": 1,
+"explanation": "大文字＋!"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim s As String\ns = \"ABC\"\nMsgBox LCase(s) & \"!\"",
+"choices": ["abc!","ABC!","Abc!","エラー"],
+"answer": 0,
+"explanation": "小文字"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total / 2",
+"choices": ["5","10","2","20"],
+"answer": 0,
+"explanation": "10/2=5"
+},
+{
+"question": "次のコードの結果はどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total ^ 2",
+"choices": ["10","20","100","16"],
+"answer": 2,
+"explanation": "10^2=100"
+},
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total",
+    "choices": ["6", "8", "10", "4"],
+    "answer": 2,
+    "explanation": "1+2+3+4=10"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total * 2",
+    "choices": ["10", "12", "20", "24"],
+    "answer": 2,
+    "explanation": "10×2=20"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 6\n    If i Mod 2 = 0 Then count = count + 1\nNext i\n\nMsgBox count",
+    "choices": ["2", "3", "4", "5"],
+    "answer": 1,
+    "explanation": "偶数は2,4,6で3回"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    total = total * 2\nNext i\n\nMsgBox total",
+    "choices": ["12", "20", "22", "24"],
+    "answer": 2,
+    "explanation": "(0+1)*2=2 → (2+2)*2=8 → (8+3)*2=22"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "If Range(\"A1\").Value > 10 Then\n    MsgBox \"OK\"\nEnd If",
+    "choices": [
+      "A1が10未満なら表示される",
+      "A1が10より大きい場合に表示される",
+      "必ず表示される",
+      "エラーになる"
+    ],
+    "answer": 1,
+    "explanation": "条件成立時のみ実行"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,2,2)",
+    "choices": ["AB", "BC", "CD", "DE"],
+    "answer": 1,
+    "explanation": "2文字目から2文字 → BC"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = Range(\"A1\").Value + 1",
+    "choices": [
+      "セルを削除する",
+      "セルの値を1増やす",
+      "セルをコピーする",
+      "エラーになる"
+    ],
+    "answer": 1,
+    "explanation": "現在値に+1"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 7\nMsgBox n \\ 2",
+    "choices": ["3", "3.5", "4", "2"],
+    "answer": 0,
+    "explanation": "整数除算 → 3"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Set r = Range(\"A1\")",
+    "choices": [
+      "値を代入する",
+      "オブジェクトを代入する",
+      "削除する",
+      "初期化する"
+    ],
+    "answer": 1,
+    "explanation": "Rangeはオブジェクト"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \" ABC \"\nMsgBox Len(Trim(s))",
+    "choices": ["3", "4", "5", "6"],
+    "answer": 0,
+    "explanation": "TrimでABC → 3"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "With Range(\"A1\")\n    .Value = 10\nEnd With",
+    "choices": [
+      "処理を遅くする",
+      "オブジェクト指定を簡略化する",
+      "削除する",
+      "繰り返し処理"
+    ],
+    "answer": 1,
+    "explanation": "Withで簡略化"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 2 To 6 Step 2\n    sum = sum + i\nNext i\n\nMsgBox sum",
+    "choices": ["6", "8", "12", "14"],
+    "answer": 2,
+    "explanation": "2+4+6=12"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Application.ScreenUpdating = False",
+    "choices": [
+      "画面更新を停止する",
+      "処理を止める",
+      "削除する",
+      "エラー防止"
+    ],
+    "answer": 0,
+    "explanation": "高速化に使用"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim v As Variant\nv = \"10\"\nMsgBox v + 5",
+    "choices": ["15", "105", "10", "エラー"],
+    "answer": 0,
+    "explanation": "数値変換される"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "If n > 5 And n < 10 Then",
+    "choices": [
+      "どちらか満たす",
+      "両方満たす",
+      "否定",
+      "比較なし"
+    ],
+    "answer": 1,
+    "explanation": "ANDは両方"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 5 To 1 Step -2\n    total = total + i\nNext i\n\nMsgBox total",
+    "choices": ["6", "9", "12", "15"],
+    "answer": 1,
+    "explanation": "5+3+1=9"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Cells(3,2).Value = 10",
+    "choices": [
+      "B3に10を設定",
+      "C2に10を設定",
+      "A1に設定",
+      "エラー"
+    ],
+    "answer": 0,
+    "explanation": "3行2列→B3"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"HELLO\"\nMsgBox Right(s,3)",
+    "choices": ["HEL", "ELL", "LLO", "LO"],
+    "answer": 2,
+    "explanation": "右3文字"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Exit For",
+    "choices": [
+      "ループを続ける",
+      "ループを途中終了する",
+      "次へスキップ",
+      "削除"
+    ],
+    "answer": 1,
+    "explanation": "途中終了"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\ni = 1\nDo While i < 3\n    i = i + 1\nLoop\nMsgBox i",
+    "choices": ["2", "3", "4", "1"],
+    "answer": 1,
+    "explanation": "1→2→3で終了"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Option Explicit",
+    "choices": [
+      "変数宣言を必須にする",
+      "処理高速化",
+      "削除",
+      "自動実行"
+    ],
+    "answer": 0,
+    "explanation": "宣言強制"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"abc\"\nMsgBox UCase(s)",
+    "choices": ["abc", "ABC", "Abc", "エラー"],
+    "answer": 1,
+    "explanation": "大文字化"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "IsNumeric(\"123\")",
+    "choices": [
+      "Trueを返す",
+      "Falseを返す",
+      "エラー",
+      "数値に変換"
+    ],
+    "answer": 0,
+    "explanation": "数値判定"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\nNext i\n\nMsgBox total + 2",
+    "choices": ["6", "7", "8", "9"],
+    "answer": 2,
+    "explanation": "6+2=8"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Call Test()",
+    "choices": [
+      "削除",
+      "プロシージャ呼び出し",
+      "保存",
+      "終了"
+    ],
+    "answer": 1,
+    "explanation": "実行"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 10\nMsgBox n Mod 4",
+    "choices": ["1", "2", "3", "4"],
+    "answer": 1,
+    "explanation": "余り2"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "If n > 5 Then MsgBox \"OK\"",
+    "choices": [
+      "常に表示",
+      "条件成立時のみ表示",
+      "エラー",
+      "繰り返し"
+    ],
+    "answer": 1,
+    "explanation": "Ifの基本"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Debug.Print n",
+    "choices": [
+      "画面表示",
+      "イミディエイトウィンドウ出力",
+      "削除",
+      "保存"
+    ],
+    "answer": 1,
+    "explanation": "デバッグ出力"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Stop",
+    "choices": [
+      "終了",
+      "一時停止（デバッグ）",
+      "削除",
+      "保存"
+    ],
+    "answer": 1,
+    "explanation": "ブレーク"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Resume",
+    "choices": [
+      "終了",
+      "エラー後に処理再開",
+      "削除",
+      "保存"
+    ],
+    "answer": 1,
+    "explanation": "エラー処理"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    total = total + i\n    If i = 3 Then Exit For\nNext i\n\nMsgBox total",
+    "choices": ["3", "6", "10", "15"],
+    "answer": 1,
+    "explanation": "1+2+3で終了 → 6"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5\n    If i = 3 Then GoTo Skip\n    total = total + i\nSkip:\nNext i\n\nMsgBox total",
+    "choices": ["12", "10", "9", "15"],
+    "answer": 0,
+    "explanation": "3だけスキップ → 1+2+4+5=12"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\ni = 1\nDo Until i > 3\n    i = i + 1\nLoop\nMsgBox i",
+    "choices": ["2", "3", "4", "5"],
+    "answer": 2,
+    "explanation": "4で終了"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "If Not (n > 5) Then MsgBox \"NG\"",
+    "choices": [
+      "nが5より大きい時表示",
+      "nが5以下の時表示",
+      "必ず表示",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "NOTで条件反転"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim v As Variant\nv = \"5\"\nMsgBox v & 5",
+    "choices": ["10", "55", "5", "エラー"],
+    "answer": 1,
+    "explanation": "& は文字列連結"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1:B2\").ClearContents",
+    "choices": [
+      "セル削除",
+      "値のみ削除",
+      "書式削除",
+      "コピー"
+    ],
+    "answer": 1,
+    "explanation": "値のみクリア"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 4\n    total = total + i\nNext i\n\nMsgBox total / 2",
+    "choices": ["5", "10", "2", "4"],
+    "answer": 0,
+    "explanation": "10 / 2 = 5"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Cells(1, Columns.Count).End(xlToLeft).Select",
+    "choices": [
+      "最終行取得",
+      "最終列取得",
+      "最終セル取得",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "右端から左へ → 最終列"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"ABC\"\nMsgBox s & 1 + 1",
+    "choices": ["ABC2", "ABC11", "2ABC", "エラー"],
+    "answer": 0,
+    "explanation": "&優先 → (\"ABC\" & 1) + 1 → \"ABC1\" + 1 → \"ABC2\""
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "If n = 5 Or n = 10 Then",
+    "choices": [
+      "両方必要",
+      "どちらかでOK",
+      "必ずFalse",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "ORはどちらか"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 5\n    If i Mod 2 = 1 Then count = count + 1\nNext i\n\nMsgBox count",
+    "choices": ["2", "3", "4", "5"],
+    "answer": 1,
+    "explanation": "奇数1,3,5 → 3回"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Offset(1,0).Value = 5",
+    "choices": [
+      "A1に代入",
+      "A2に代入",
+      "B1に代入",
+      "B2に代入"
+    ],
+    "answer": 1,
+    "explanation": "1行下 → A2"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 5\nMsgBox n ^ 2",
+    "choices": ["10", "15", "25", "5"],
+    "answer": 2,
+    "explanation": "べき乗 → 25"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "ActiveSheet.Cells(1,1).Value",
+    "choices": [
+      "B2",
+      "A1",
+      "C1",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "1行1列 → A1"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"ABC\"\nMsgBox Mid(s,2)",
+    "choices": ["ABC", "BC", "C", "AB"],
+    "answer": 1,
+    "explanation": "2文字目以降 → BC"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Do While i < 5",
+    "choices": [
+      "必ず1回",
+      "条件Trueの間繰り返す",
+      "1回も実行されない",
+      "終了"
+    ],
+    "answer": 1,
+    "explanation": "Whileループ"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\ni = 0\nDo While i < 3\n    i = i + 1\nLoop\nMsgBox i",
+    "choices": ["2", "3", "4", "1"],
+    "answer": 1,
+    "explanation": "3で終了"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "IsEmpty(x)",
+    "choices": [
+      "数値判定",
+      "未初期化判定",
+      "文字判定",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "Emptyかどうか"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 10\nIf n >= 10 Then MsgBox \"OK\"",
+    "choices": ["OK", "NG", "10", "エラー"],
+    "answer": 0,
+    "explanation": "10以上"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = \"\"",
+    "choices": [
+      "削除",
+      "空文字を代入",
+      "エラー",
+      "数値化"
+    ],
+    "answer": 1,
+    "explanation": "空文字"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"ABC\"\nMsgBox Replace(s,\"B\",\"X\")",
+    "choices": ["AXC", "ABC", "XBC", "ABX"],
+    "answer": 0,
+    "explanation": "B→X"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "UBound(arr)",
+    "choices": [
+      "最小インデックス",
+      "最大インデックス",
+      "要素数",
+      "削除"
+    ],
+    "answer": 1,
+    "explanation": "最大添字"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim arr(2) As Integer\nMsgBox UBound(arr)",
+    "choices": ["1", "2", "3", "0"],
+    "answer": 1,
+    "explanation": "0〜2 → 最大2"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "LBound(arr)",
+    "choices": [
+      "最大値",
+      "最小インデックス",
+      "合計",
+      "削除"
+    ],
+    "answer": 1,
+    "explanation": "通常0"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim arr(2) As Integer\nMsgBox LBound(arr)",
+    "choices": ["0", "1", "2", "3"],
+    "answer": 0,
+    "explanation": "0始まり"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Select",
+    "choices": [
+      "削除",
+      "選択",
+      "コピー",
+      "保存"
+    ],
+    "answer": 1,
+    "explanation": "セル選択"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 3\nMsgBox n * 2 + 1",
+    "choices": ["7", "8", "9", "6"],
+    "answer": 0,
+    "explanation": "3*2+1=7"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Resize(2,2)",
+    "choices": [
+      "A1のみ",
+      "2×2範囲",
+      "列のみ",
+      "行のみ"
+    ],
+    "answer": 1,
+    "explanation": "2行2列"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"abc\"\nMsgBox LCase(UCase(s))",
+    "choices": ["abc", "ABC", "Abc", "エラー"],
+    "answer": 0,
+    "explanation": "大→小でabc"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Clear",
+    "choices": [
+      "値のみ削除",
+      "すべて削除（書式含む）",
+      "コピー",
+      "移動"
+    ],
+    "answer": 1,
+    "explanation": "完全クリア"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 5 Step 2\n    total = total + i\nNext i\n\nMsgBox total",
+    "choices": ["6", "9", "15", "5"],
+    "answer": 1,
+    "explanation": "1+3+5=9"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 5 To 1 Step -1\n    total = total + i\nNext i\n\nMsgBox total",
+    "choices": ["15", "10", "5", "0"],
+    "answer": 0,
+    "explanation": "5+4+3+2+1=15"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = Range(\"A1\").Value",
+    "choices": [
+      "値をコピーしている",
+      "何も変わらない",
+      "削除される",
+      "エラーになる"
+    ],
+    "answer": 1,
+    "explanation": "同じ値を代入→変化なし"
+  },
+  {
+    "question": "次のコードを実行した結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"A\"\nMsgBox s & s & s",
+    "choices": ["AAA", "A3", "3A", "エラー"],
+    "answer": 0,
+    "explanation": "連結 → AAA"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Cells(Rows.Count,1).End(xlUp).Row",
+    "choices": [
+      "最終列",
+      "最終行（データあり）",
+      "最初の行",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "下から上→最終データ行"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 5\nIf n <> 5 Then MsgBox \"OK\"",
+    "choices": ["OK", "表示なし", "5", "エラー"],
+    "answer": 1,
+    "explanation": "≠なのでFalse"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = Null",
+    "choices": [
+      "空文字になる",
+      "Nullを代入",
+      "エラーになる",
+      "0になる"
+    ],
+    "answer": 1,
+    "explanation": "Null代入"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 1 To 3\n    sum = sum + i\nNext i\n\nMsgBox sum ^ 2",
+    "choices": ["6", "9", "36", "12"],
+    "answer": 2,
+    "explanation": "6^2=36"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").EntireRow.Delete",
+    "choices": [
+      "A1削除",
+      "行削除",
+      "列削除",
+      "コピー"
+    ],
+    "answer": 1,
+    "explanation": "行全体削除"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim v As Variant\nv = Empty\nMsgBox IsEmpty(v)",
+    "choices": ["True", "False", "Empty", "エラー"],
+    "answer": 0,
+    "explanation": "Empty判定"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Font.Bold = True",
+    "choices": [
+      "値変更",
+      "太字設定",
+      "削除",
+      "色変更"
+    ],
+    "answer": 1,
+    "explanation": "フォント太字"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 10\nMsgBox n / 4",
+    "choices": ["2", "2.5", "3", "4"],
+    "answer": 1,
+    "explanation": "通常除算→2.5"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Interior.Color = vbRed",
+    "choices": [
+      "文字色変更",
+      "背景色変更",
+      "削除",
+      "コピー"
+    ],
+    "answer": 1,
+    "explanation": "背景色"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"123\"\nMsgBox Val(s) + 1",
+    "choices": ["1231", "124", "124.0", "エラー"],
+    "answer": 1,
+    "explanation": "数値変換→124"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Copy Range(\"B1\")",
+    "choices": [
+      "削除",
+      "コピー",
+      "移動",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "A1→B1コピー"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + 1\nNext i\n\nMsgBox total",
+    "choices": ["1", "2", "3", "6"],
+    "answer": 2,
+    "explanation": "3回で3"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = Now",
+    "choices": [
+      "日付のみ",
+      "現在日時",
+      "数値",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "現在日時"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = -5\nMsgBox Abs(n)",
+    "choices": ["-5", "5", "0", "エラー"],
+    "answer": 1,
+    "explanation": "絶対値"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = \"=SUM(B1:B3)\"",
+    "choices": [
+      "文字列",
+      "数式として設定",
+      "エラー",
+      "削除"
+    ],
+    "answer": 1,
+    "explanation": "数式扱い"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"abc\"\nMsgBox StrConv(s, vbUpperCase)",
+    "choices": ["abc", "ABC", "Abc", "エラー"],
+    "answer": 1,
+    "explanation": "大文字変換"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").CurrentRegion.Select",
+    "choices": [
+      "A1のみ",
+      "連続データ範囲",
+      "列全体",
+      "行全体"
+    ],
+    "answer": 1,
+    "explanation": "連続範囲"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 5\nMsgBox n + n * 2",
+    "choices": ["10", "15", "20", "25"],
+    "answer": 1,
+    "explanation": "5+10=15"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = Date",
+    "choices": [
+      "日時",
+      "日付のみ",
+      "数値",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "日付のみ"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim i As Integer\ni = 1\nDo\n    i = i + 1\nLoop While i < 3\nMsgBox i",
+    "choices": ["2", "3", "4", "1"],
+    "answer": 1,
+    "explanation": "2→3で終了"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Columns.Count",
+    "choices": [
+      "列数",
+      "行数",
+      "セル数",
+      "エラー"
+    ],
+    "answer": 0,
+    "explanation": "列数"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim s As String\ns = \"ABC\"\nMsgBox InStr(s,\"B\")",
+    "choices": ["0", "1", "2", "3"],
+    "answer": 2,
+    "explanation": "Bは2文字目"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Rows.Count",
+    "choices": [
+      "行数",
+      "列数",
+      "セル数",
+      "削除"
+    ],
+    "answer": 0,
+    "explanation": "行数"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 5\nMsgBox n * (n + 1)",
+    "choices": ["25", "30", "35", "20"],
+    "answer": 1,
+    "explanation": "5×6=30"
+  },
+  {
+    "question": "次のコードの説明として正しいものはどれですか。",
+    "code": "Range(\"A1\").Value = \"Test\"",
+    "choices": [
+      "数値代入",
+      "文字列代入",
+      "削除",
+      "エラー"
+    ],
+    "answer": 1,
+    "explanation": "文字列"
+  },
+  {
+    "question": "次のコードの結果として正しいものはどれですか。",
+    "code": "Dim n As Integer\nn = 3\nMsgBox n Mod 2",
+    "choices": ["0", "1", "2", "3"],
+    "answer": 1,
+    "explanation": "余り1"
+  },
+{
+"question": "次のコードを実行したときの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + i\n    total = total + 1\nNext i\n\nMsgBox total",
+"choices": ["6","9","10","12"],
+"answer": 1,
+"explanation": "(0+1+1)=2→(2+2+1)=5→(5+3+1)=9"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\nDim sum As Integer\n\nFor i = 2 To 8 Step 3\n    sum = sum + i\nNext i\n\nMsgBox sum",
+"choices": ["10","13","15","18"],
+"answer": 3,
+"explanation": "2+5+8=15だがStep3→2,5,8→合計15"
+},
+{
+"question": "次のコードで表示される値はどれですか。",
+"code": "Dim s As String\ns = \"ABCDE\"\nMsgBox Mid(s,2,2)",
+"choices": ["AB","BC","CD","DE"],
+"answer": 1,
+"explanation": "2文字目から2文字→BC"
+},
+{
+"question": "次のコードで、Range(\"B2\").Row の値はどれですか。",
+"choices": ["1","2","B","エラー"],
+"answer": 1,
+"explanation": "B2の行は2"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim n As Integer\nn = 7\nMsgBox n Mod 4",
+"choices": ["1","2","3","4"],
+"answer": 2,
+"explanation": "7÷4の余りは3"
+},
+{
+"question": "次のコードで、Range(\"C3\").Column の値はどれですか。",
+"choices": ["1","2","3","4"],
+"answer": 2,
+"explanation": "C列は3"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 6\n    If i <= 3 Then count = count + 1\nNext i\n\nMsgBox count",
+"choices": ["2","3","4","6"],
+"answer": 1,
+"explanation": "1,2,3で3回"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim s As String\ns = \"Hello\"\nMsgBox UCase(s)",
+"choices": ["hello","HELLO","Hello","エラー"],
+"answer": 1,
+"explanation": "大文字変換"
+},
+{
+"question": "次のコードで、Nothing の意味として正しいものはどれですか。",
+"code": "Dim r As Range\nSet r = Nothing",
+"choices": ["0を代入","空文字","オブジェクト解除","削除"],
+"answer": 2,
+"explanation": "参照を解除"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo Until i = 4\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["3","4","5","6"],
+"answer": 1,
+"explanation": "4で終了"
+},
+{
+"question": "次のコードで Exit Do の役割として正しいものはどれですか。",
+"code": "Do While True\n    Exit Do\nLoop",
+"choices": ["無限ループ","ループ終了","次へ進む","エラー"],
+"answer": 1,
+"explanation": "ループ終了"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim n As Integer\nn = 5\nMsgBox n * 2 + 3",
+"choices": ["13","16","10","8"],
+"answer": 0,
+"explanation": "5×2+3=13"
+},
+{
+"question": "次のコードで Range(\"A1\").Address の結果はどれですか。",
+"choices": ["A1","$A$1","1,1","エラー"],
+"answer": 1,
+"explanation": "絶対参照"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim s As String\ns = \"abc\"\nMsgBox Len(s)",
+"choices": ["1","2","3","4"],
+"answer": 2,
+"explanation": "3文字"
+},
+{
+"question": "次のコードで With ステートメントの利点として正しいものはどれですか。",
+"code": "With Range(\"A1\")\n    .Value = 1\n    .Font.Bold = True\nEnd With",
+"choices": ["高速化","簡略化","削除","繰り返し"],
+"answer": 1,
+"explanation": "記述の簡略化"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\nDim total As Integer\n\nFor i = 1 To 3\n    total = total + 2\nNext i\n\nMsgBox total",
+"choices": ["2","4","6","8"],
+"answer": 2,
+"explanation": "2+2+2=6"
+},
+{
+"question": "次のコードで Cells(3,2) のセルはどれですか。",
+"choices": ["A3","B3","C2","B2"],
+"answer": 1,
+"explanation": "3行2列→B3"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim n As Integer\nn = 10\nMsgBox n \\ 4",
+"choices": ["2","2.5","3","4"],
+"answer": 0,
+"explanation": "整数除算→2"
+},
+{
+"question": "次のコードで Option Explicit の目的として正しいものはどれですか。",
+"code": "Option Explicit",
+"choices": ["速度向上","宣言強制","自動実行","削除"],
+"answer": 1,
+"explanation": "変数宣言を必須にする"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim s As String\ns = \"ABC\"\nMsgBox Right(s,1)",
+"choices": ["A","B","C","AB"],
+"answer": 2,
+"explanation": "右1文字→C"
+},
+{
+"question": "次のコードで Application.ScreenUpdating = False の目的として正しいものはどれですか。",
+"choices": ["画面更新停止","削除","エラー防止","入力"],
+"answer": 0,
+"explanation": "画面更新を止めて高速化"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\nDim count As Integer\n\nFor i = 1 To 5\n    If i Mod 2 = 1 Then count = count + 1\nNext i\n\nMsgBox count",
+"choices": ["2","3","4","5"],
+"answer": 1,
+"explanation": "奇数1,3,5で3回"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim v As Variant\nv = \"5\"\nMsgBox v + 5",
+"choices": ["55","10","5","エラー"],
+"answer": 1,
+"explanation": "数値として計算"
+},
+{
+"question": "次のコードで Range(\"A1\").Value の意味として正しいものはどれですか。",
+"choices": ["セル削除","値取得/設定","コピー","移動"],
+"answer": 1,
+"explanation": "値を扱う"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim i As Integer\ni = 1\nDo While i < 4\n    i = i + 1\nLoop\nMsgBox i",
+"choices": ["3","4","5","6"],
+"answer": 1,
+"explanation": "4で終了"
+},
+{
+"question": "次のコードで Select Case の役割として正しいものはどれですか。",
+"choices": ["繰り返し","分岐","宣言","削除"],
+"answer": 1,
+"explanation": "条件分岐"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim n As Integer\nn = 3\nSelect Case n\n    Case 1\n        MsgBox \"A\"\n    Case 3\n        MsgBox \"B\"\nEnd Select",
+"choices": ["A","B","C","エラー"],
+"answer": 1,
+"explanation": "Case3"
+},
+{
+"question": "次のコードで Debug.Print の出力先はどれですか。",
+"choices": ["画面","イミディエイトウィンドウ","セル","ファイル"],
+"answer": 1,
+"explanation": "デバッグ用出力"
+},
+{
+"question": "次のコードの結果として正しいものはどれですか。",
+"code": "Dim n As Integer\nn = 4\nIf n > 5 Then\n    MsgBox \"A\"\nElse\n    MsgBox \"B\"\nEnd If",
+"choices": ["A","B","C","エラー"],
+"answer": 1,
+"explanation": "条件不成立"
+},
+{
+"question": "次のコードで Call の役割として正しいものはどれですか。",
+"code": "Call Test",
+"choices": ["削除","呼び出し","終了","保存"],
+"answer": 1,
+"explanation": "プロシージャ呼び出し"
 }
 ]
